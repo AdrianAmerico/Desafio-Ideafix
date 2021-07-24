@@ -1,0 +1,11 @@
+###
+
+PUT http://localhost:3003/create
+Content-Type: application/json
+
+{
+    "topic": "FKDSGSFKKFSDFSDK",
+    "message": "FDKGKDFGKDFGKDFKGDFGKDFKG"
+}
+
+###
