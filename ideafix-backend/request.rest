@@ -1,6 +1,6 @@
 ###
 
-PUT http://localhost:3003/create
+PUT http://localhost:3003/task/create
 Content-Type: application/json
 
 {
@@ -12,6 +12,10 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3003/all
+GET http://localhost:3003/task/all
+
+###
+
+DELETE  http://localhost:3003/task/delete/1627154542901
 
 ###
