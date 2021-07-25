@@ -32,6 +32,20 @@ export function useGetNotes() {
     return { notes, getNotes }
 }
 
+
+
+export function putCreateNote(body, getNotes, clear) {
+    axios.put(`${BASE_URL}/task/create`, body)
+        .then((res) => {
+            console.log(res)
+            clear()
+            getNotes()
+        })
+        .catch((err) => {
+            console.log(err.response)
+        })
+}
+
 export function deleteTasks(id, getNotes) {
     axios.delete(`${BASE_URL}/task/delete/${id}`)
         .then((res) => {
@@ -42,3 +56,4 @@ export function deleteTasks(id, getNotes) {
             console.log(err.response)
         })
 }
+
