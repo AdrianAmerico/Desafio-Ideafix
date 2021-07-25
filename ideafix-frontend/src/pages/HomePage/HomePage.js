@@ -17,29 +17,31 @@ function HomePage() {
 
     const sendPost = (event) => {
         event.preventDefault()
-        putCreateNote(body,getNotes, clear)
+        putCreateNote(body, getNotes, clear)
     }
 
 
     return (
         <div id="homePageContainer">
-
-            <div>
+            <section className="taskSection-leftSide">
                 <Title>Bloco de notas</Title>
-
                 <form onSubmit={sendPost}>
-                    <input placeholder="Assunto" name={"topic"} onChange={onChange}/>
-                    <input placeholder="Texto" name={"message"} onChange={onChange}/>
+                    <input placeholder="Assunto" name={"topic"} onChange={onChange} />
+                    <input placeholder="Texto" name={"message"} onChange={onChange} />
                     <button>CRIAR NOTA</button>
                 </form>
-            </div>
-
-            <div>
+            </section>
+            <section className="taskSection-rightSide">
                 <Title>Suas notas</Title>
-                {notes ? notes.map((note) => {
-                    return <Card note={note} key={note.id} getNotes={getNotes} />
-                }) : <p>Carregando</p>}
-            </div>
+                <div className="taskContainer">
+                    <div className="taskAlign">
+                        {notes ? notes.map((note) => {
+                            return <Card note={note} key={note.id} getNotes={getNotes} />
+                        }) : <p>Carregando</p>}
+                    </div>
+                </div>
+            </section>
+
         </div>
     )
 }

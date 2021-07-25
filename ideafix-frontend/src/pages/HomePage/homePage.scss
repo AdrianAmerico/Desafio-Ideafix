@@ -1,6 +1,46 @@
-@import '../../styles/colors.scss';
+@import "../../styles/colors.scss";
 
 #homePageContainer {
-display: flex;
+  display: flex;
+  flex-direction: row;
 
+  .taskSection-leftSide {
+    flex: 3;
+  }
+
+  .taskSection-rightSide {
+    flex: 5;
+  }
+
+  .taskContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .taskAlign {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90%;
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    flex-direction: column;
+    align-items: center;
+    .taskContainer {
+      margin: 0 auto;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+  @media (max-width: 600px) {
+    .taskContainer {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
 }
