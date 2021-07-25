@@ -26,12 +26,9 @@ function HomePage() {
             <div>
                 <Title>Suas notas</Title>
                 {notes ? notes.map((note) => {
-                    return <Card note={note} key={note.id}/>
+                    return <Card note={note} key={note.id} getNotes={getNotes}/>
                 }) : <p>Carregando</p>}
-
             </div>
-
-
         </div>
     )
 }
