@@ -1,0 +1,9 @@
+@import "../../styles//colors.scss";
+
+button {
+    background: $orange;
+    padding: 2px 10px;
+    max-width: 200px;
+    border: 0;
+    border-radius: 10px;
+}

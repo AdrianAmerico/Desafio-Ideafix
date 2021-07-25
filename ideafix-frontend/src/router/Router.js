@@ -1,17 +1,22 @@
 import React from 'react';
-import { Router, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import HomePage from '../pages/HomePage/HomePage';
 
-function Router() {
+function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Router>
+                <Route exact path="/">
+                    <HomePage />
+                </Route>
 
-                </Router>
+                <Route>
+                    <h1>404 Página não encontrada</h1>
+                </Route>
             </Switch>
 
         </BrowserRouter>
     )
 }
 
-export default Router;
+export default Routes;
