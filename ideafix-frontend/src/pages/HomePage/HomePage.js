@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import { Title } from './styled';
-import { useGetNotes, request } from '../../requests'
+import { useGetNotes, request } from '../../requests';
 import './homePage.scss';
 
 function HomePage() {
@@ -25,8 +25,10 @@ function HomePage() {
 
             <div>
                 <Title>Suas notas</Title>
+                {notes ? notes.map((note) => {
+                    return <Card note={note} key={note.id}/>
+                }) : <p>Carregando</p>}
 
-                <Card />
             </div>
 
 

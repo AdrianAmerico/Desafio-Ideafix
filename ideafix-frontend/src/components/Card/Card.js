@@ -1,13 +1,15 @@
 import React from 'react';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import './card.scss';
 
-function Card() {
+function Card({ note }) {
+    const { id, topic, message } = note
     return (
         <div id="cardContainer">
-            <p>X</p>
-            <h3>Ideafix</h3>
+            <HighlightOffIcon />
+            <h3>{topic}</h3>
             <div />
-            <p>Empresa lalala</p>
+            <p>{message}</p>
         </div>
     )
 }
