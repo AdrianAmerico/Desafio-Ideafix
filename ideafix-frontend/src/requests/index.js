@@ -13,10 +13,6 @@ export const request = {
                 console.log(err)
             })
     },
-    deleteNote: (id) => {
-        axios.delete(`${BASE_URL}/task/${id}`)
-    },
-
 }
 
 
@@ -35,3 +31,29 @@ export function useGetNotes() {
     }
     return { notes, getNotes }
 }
+
+
+
+export function putCreateNote(body, getNotes, clear) {
+    axios.put(`${BASE_URL}/task/create`, body)
+        .then((res) => {
+            console.log(res)
+            clear()
+            getNotes()
+        })
+        .catch((err) => {
+            console.log(err.response)
+        })
+}
+
+export function deleteTasks(id, getNotes) {
+    axios.delete(`${BASE_URL}/task/delete/${id}`)
+        .then((res) => {
+            alert("Task apagada")
+            getNotes()
+        })
+        .catch((err) => {
+            console.log(err.response)
+        })
+}
+

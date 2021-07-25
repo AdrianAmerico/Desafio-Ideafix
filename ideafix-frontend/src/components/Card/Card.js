@@ -1,13 +1,17 @@
 import React from 'react';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import { deleteTasks } from '../../requests';
 import './card.scss';
 
-function Card() {
+
+function Card({ note, getNotes }) {
+    const { id, topic, message } = note
     return (
         <div id="cardContainer">
-            <p>X</p>
-            <h3>Ideafix</h3>
+            <HighlightOffIcon onClick={() => deleteTasks(id, getNotes)} />
+            <h3>{topic}</h3>
             <div />
-            <p>Empresa lalala</p>
+            <p>{message}</p>
         </div>
     )
 }
