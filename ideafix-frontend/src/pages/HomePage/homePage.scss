@@ -8,10 +8,79 @@
 }
 .taskSection-leftSide {
   flex: 3;
+  border-right: 1px solid $orange;
+
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+  }
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+
+  input,
+  textarea {
+    padding: 10px;
+    width: 95%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 2px 0 $intense-gray;
+    background-color: $card-background;
+  }
+
+  button {
+    display: inline-block;
+    background-color: $orange;
+    border-radius: 5px;
+    color: white;
+    border: 0;
+    padding: 5px;
+    margin-right: 0%;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken($orange, 15%);
+      transition: all 0.3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .taskSection-rightSide {
-  flex: 5;
+  flex: 7;
+  border-left: 1px solid $orange;
 }
 .taskContainer {
   height: 100%;
@@ -22,7 +91,7 @@
   width: 90%;
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: center;
   grid-gap: 10px;

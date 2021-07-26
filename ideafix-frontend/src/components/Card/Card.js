@@ -13,7 +13,7 @@ function Card({ note, getNotes }) {
                 <div className="icon">
                     <CancelTwoToneIcon onClick={() => deleteTasks(id, getNotes)} />
                 </div>
-                <div style={{ padding: "10px 0 10px 5px" }}>
+                <div style={{ padding: "10px" }}>
                     <h3>{topic}</h3>
                     <div style={{ borderBottom: "1px dotted black", padding: "5px 0" }} />
                     <p>{message}</p>
