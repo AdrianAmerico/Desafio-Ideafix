@@ -3,44 +3,124 @@
 #homePageContainer {
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  padding: 50px 0 50px 50px;
+}
+.taskSection-leftSide {
+  flex: 3;
+  border-right: 1px solid $orange;
 
-  .taskSection-leftSide {
-    flex: 3;
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+  }
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+
+  input,
+  textarea {
+    padding: 10px;
+    width: 95%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 2px 0 $intense-gray;
+    background-color: $card-background;
   }
 
-  .taskSection-rightSide {
-    flex: 5;
+  button {
+    display: inline-block;
+    background-color: $orange;
+    border-radius: 5px;
+    color: white;
+    border: 0;
+    padding: 5px;
+    margin-right: 0%;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken($orange, 15%);
+      transition: all 0.3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.taskSection-rightSide {
+  flex: 7;
+  border-left: 1px solid $orange;
+}
+.taskContainer {
+  height: 100%;
+}
+
+.taskAlign {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 10px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #homePageContainer {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
 
   .taskContainer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
-
   .taskAlign {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 90%;
-  }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     flex-direction: column;
-    align-items: center;
-    .taskContainer {
-      margin: 0 auto;
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
   }
-  @media (max-width: 600px) {
-    .taskContainer {
-      flex-wrap: nowrap;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
+}
+@media (max-width: 600px) {
+  .taskContainer {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 }

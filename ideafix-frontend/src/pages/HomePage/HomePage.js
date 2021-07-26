@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import { Title } from './styled';
-import { useGetNotes, request, putCreateNote } from '../../requests';
+import { useGetNotes, putCreateNote } from '../../requests';
 import './homePage.scss';
 import useForm from '../../hooks/useForm';
+import { TextField } from '@material-ui/core';
 
 function HomePage() {
 
@@ -20,21 +21,24 @@ function HomePage() {
         putCreateNote(body, getNotes, clear)
     }
 
-
     return (
         <div id="homePageContainer">
             <section className="taskSection-leftSide">
                 <Title>Bloco de notas</Title>
-                <form onSubmit={sendPost}>
-                    <input placeholder="Assunto" name={"topic"} onChange={onChange} />
-                    <input placeholder="Texto" name={"message"} onChange={onChange} />
-                    <button>CRIAR NOTA</button>
+                <form onSubmit={sendPost} className="formSection">
+                    <input placeholder="Assunto" name={"topic"} onChange={onChange} autoComplete="off"/>
+                    <textarea placeholder="Texto" name={"message"} onChange={onChange} rows="5" autoComplete="off"/>
+                    <div>
+                        <button>CRIAR NOTA</button>
+                    </div>
+
                 </form>
             </section>
             <section className="taskSection-rightSide">
-                <Title>Suas notas</Title>
+
                 <div className="taskContainer">
                     <div className="taskAlign">
+                        <Title>Suas notas</Title>
                         {notes ? notes.map((note) => {
                             return <Card note={note} key={note.id} getNotes={getNotes} />
                         }) : <p>Carregando</p>}
