@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import { Title } from './styled';
-import { useGetNotes, request, putCreateNote } from '../../requests';
+import { useGetNotes, putCreateNote } from '../../requests';
 import './homePage.scss';
 import useForm from '../../hooks/useForm';
 
@@ -32,9 +32,10 @@ function HomePage() {
                 </form>
             </section>
             <section className="taskSection-rightSide">
-                <Title>Suas notas</Title>
+
                 <div className="taskContainer">
                     <div className="taskAlign">
+                        <Title>Suas notas</Title>
                         {notes ? notes.map((note) => {
                             return <Card note={note} key={note.id} getNotes={getNotes} />
                         }) : <p>Carregando</p>}

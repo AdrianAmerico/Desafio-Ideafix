@@ -3,44 +3,55 @@
 #homePageContainer {
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  padding: 50px 0 50px 50px;
+}
+.taskSection-leftSide {
+  flex: 3;
+}
 
-  .taskSection-leftSide {
-    flex: 3;
-  }
+.taskSection-rightSide {
+  flex: 5;
+}
+.taskContainer {
+  height: 100%;
+}
 
-  .taskSection-rightSide {
-    flex: 5;
+.taskAlign {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 200px);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 10px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #homePageContainer {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
 
   .taskContainer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
-
   .taskAlign {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 90%;
-  }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     flex-direction: column;
-    align-items: center;
-    .taskContainer {
-      margin: 0 auto;
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
   }
-  @media (max-width: 600px) {
-    .taskContainer {
-      flex-wrap: nowrap;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
+}
+@media (max-width: 600px) {
+  .taskContainer {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 }
