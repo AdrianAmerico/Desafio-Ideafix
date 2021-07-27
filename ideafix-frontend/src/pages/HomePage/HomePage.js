@@ -35,7 +35,9 @@ function HomePage() {
             <section className="taskSection-rightSide">
                 <div className="taskContainer">
                     <div className="taskAlign">
-                        <Title>Suas notas</Title>
+                        <div className="titleAlign">
+                            <Title>Suas notas</Title>
+                        </div>
                         {notes ? notes.map((note) => {
                             return <Card note={note} key={note.id} getNotes={getNotes} />
                         }) : <p>Carregando</p>}

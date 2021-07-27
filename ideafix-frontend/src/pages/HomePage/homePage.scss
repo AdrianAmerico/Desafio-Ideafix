@@ -88,6 +88,10 @@
 .taskContainer {
   height: 100%;
 }
+.titleAlign {
+grid-column: 1 / -1;
+margin-left: 10px;
+}
 
 .taskAlign {
   margin: 0 auto;
@@ -132,5 +136,11 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+  }
+
+  .titleAlign {
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 }

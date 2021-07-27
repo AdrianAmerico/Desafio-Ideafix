@@ -26,7 +26,7 @@ function Card({ note, getNotes }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 export default Card;
