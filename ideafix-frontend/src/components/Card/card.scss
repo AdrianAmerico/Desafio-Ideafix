@@ -14,6 +14,7 @@
     transform: scale(1.1);
     transition: 200ms linear;
   }
+
   .titleAlign {
     padding: 10px;
   }
@@ -23,7 +24,7 @@
     height: 100%;
     box-shadow: 0 1px 2px $intense-gray;
     text-overflow: ellipsis;
-    overflow-x: hidden;
+    overflow: overlay;
   }
 
   .icon {
@@ -44,7 +45,7 @@
     word-break: break-all;
     white-space: pre-wrap;
     text-overflow: ellipsis;
-    overflow-x: hidden;
+    overflow: overlay;
   }
 
   h3,

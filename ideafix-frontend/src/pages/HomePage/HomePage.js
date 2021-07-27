@@ -10,7 +10,7 @@ function HomePage() {
 
     const { notes, getNotes } = useGetNotes()
     const { body, onChange, clear } = useForm({ topic: "", message: "" })
-    console.log(notes)
+    
     useEffect(() => {
         getNotes()
     }, [])

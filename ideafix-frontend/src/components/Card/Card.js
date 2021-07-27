@@ -18,15 +18,15 @@ function Card({ note, getNotes }) {
                 <div className="icon">
                     <CancelTwoToneIcon onClick={() => deleteTask(id)} />
                 </div>
-                <div style={{ padding: "10px", height: "100%" }}>
-                    <div style={{ height: "100%" }}>
+                <div style={{ padding: "10px", height: "100px" }}>
+                  
                         <h3>{topic}</h3>
                         <div style={{ borderBottom: "1px dotted black", padding: "5px 0" }} />
                         <span>{message}</span>
-                    </div>
+                 
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 export default Card;

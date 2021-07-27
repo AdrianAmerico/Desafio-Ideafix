@@ -23,9 +23,6 @@ export function putCreateNote(body, getNotes, clear) {
             clear()
             getNotes()
         })
-        .catch((err) => {
-            console.log(err.message)
-        })
 }
 
 export function deleteTasks(id, getNotes) {
