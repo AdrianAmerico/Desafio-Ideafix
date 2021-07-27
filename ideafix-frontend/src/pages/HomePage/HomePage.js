@@ -25,8 +25,8 @@ function HomePage() {
             <section className="taskSection-leftSide">
                 <Title>Bloco de notas</Title>
                 <form onSubmit={sendPost} className="formSection">
-                    <input placeholder="Assunto" name={"topic"} onChange={onChange} autoComplete="off"/>
-                    <textarea placeholder="Texto" name={"message"} onChange={onChange} rows="5" autoComplete="off"/>
+                    <input placeholder="Assunto" value={body.topic} name={"topic"} onChange={onChange} autoComplete="off"/>
+                    <textarea placeholder="Texto" value={body.message} name={"message"} onChange={onChange} rows="5" autoComplete="off"/>
                     <div>
                         <button>CRIAR NOTA</button>
                     </div>
