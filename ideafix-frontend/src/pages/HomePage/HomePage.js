@@ -4,7 +4,6 @@ import { Title } from './styled';
 import { useGetNotes, putCreateNote } from '../../requests';
 import './homePage.scss';
 import useForm from '../../hooks/useForm';
-import { TextField } from '@material-ui/core';
 
 function HomePage() {
 

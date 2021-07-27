@@ -103,6 +103,12 @@
     margin: 0;
   }
 
+  .formSection{
+  align-items: center;
+  text-align: center;
+  
+  }
+
   .taskContainer {
     margin: 0 auto;
     align-items: flex-start;
@@ -123,4 +129,5 @@
     align-items: flex-start;
     justify-content: center;
   }
+
 }
