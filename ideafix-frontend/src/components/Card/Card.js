@@ -5,11 +5,18 @@ import './card.scss';
 
 function Card({ note, getNotes }) {
     const { id, topic, message } = note
+
+    const deleteTask = (id) => {
+        const result = window.confirm("Deseja mesmo apagar essa tarefa ?")
+        if (result) {
+            deleteTasks(id, getNotes)
+        }
+    }
     return (
         <div id="cardContainer">
             <div className="cardAlign">
                 <div className="icon">
-                    <CancelTwoToneIcon onClick={() => deleteTasks(id, getNotes)} />
+                    <CancelTwoToneIcon onClick={() => deleteTask(id)} />
                 </div>
                 <div style={{ padding: "10px", height: "100%" }}>
                     <div style={{ height: "100%" }}>

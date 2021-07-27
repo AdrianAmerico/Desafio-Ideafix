@@ -31,7 +31,6 @@ export function putCreateNote(body, getNotes, clear) {
 export function deleteTasks(id, getNotes) {
     axios.delete(`${BASE_URL}/task/delete/${id}`)
         .then((res) => {
-            alert("Task apagada")
             getNotes()
         })
         .catch((err) => {
