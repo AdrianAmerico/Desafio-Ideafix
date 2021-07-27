@@ -7,9 +7,8 @@ import useForm from '../../hooks/useForm';
 
 function HomePage() {
 
-    const { notes, getNotes } = useGetNotes({})
+    const { notes, getNotes } = useGetNotes()
     const { body, onChange, clear } = useForm({ topic: "", message: "" })
-    console.log(body)
 
     useEffect(() => {
         getNotes()
@@ -30,11 +29,10 @@ function HomePage() {
                     <div>
                         <button>CRIAR NOTA</button>
                     </div>
-
                 </form>
             </section>
-            <section className="taskSection-rightSide">
 
+            <section className="taskSection-rightSide">
                 <div className="taskContainer">
                     <div className="taskAlign">
                         <Title>Suas notas</Title>

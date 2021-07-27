@@ -21,7 +21,6 @@ const putCreateNote = async (req: Request, res: Response): Promise<void> => {
     };
 
     await connection("Notes").insert(post);
-    console.log(post);
     res.status(201).send(post);
   } catch (error) {
     if (error instanceof Error) {

@@ -55,10 +55,16 @@
   #cardContainer {
     width: 100%;
     height: 150px;
+    .cardAlign {
+      box-shadow: 0 1px 2px 1px $intense-gray;
+    }
+    span {
+      overflow: auto;
+    }
 
     h3 {
-      line-clamp: 2;
-      text-overflow: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
