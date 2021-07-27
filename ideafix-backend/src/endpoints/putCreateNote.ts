@@ -8,7 +8,7 @@ const putCreateNote = async (req: Request, res: Response): Promise<void> => {
     const { topic, message } = req.body;
 
     if (!topic || !message) {
-      errorCode = 422;
+      errorCode = 401;
       throw new Error("invalid body");
     }
 
@@ -21,6 +21,7 @@ const putCreateNote = async (req: Request, res: Response): Promise<void> => {
     };
 
     await connection("Notes").insert(post);
+
     res.status(201).send(post);
   } catch (error) {
     if (error instanceof Error) {

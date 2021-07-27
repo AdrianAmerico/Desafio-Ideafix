@@ -18,13 +18,13 @@ export function useGetNotes() {
 }
 
 export function putCreateNote(body, getNotes, clear) {
-    axios.put(`${BASE_URL}/task/create`, body)
+     axios.put(`${BASE_URL}/task/create`, body)
         .then((res) => {
             clear()
             getNotes()
         })
         .catch((err) => {
-            alert(err.message.data)
+            console.log(err.message)
         })
 }
 
