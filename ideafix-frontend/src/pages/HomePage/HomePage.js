@@ -4,12 +4,13 @@ import { Title } from './styled';
 import { useGetNotes, putCreateNote } from '../../requests';
 import './homePage.scss';
 import useForm from '../../hooks/useForm';
+import NoteError from '../../components/NoteError/NoteError';
 
 function HomePage() {
 
     const { notes, getNotes } = useGetNotes()
     const { body, onChange, clear } = useForm({ topic: "", message: "" })
-
+    console.log(notes)
     useEffect(() => {
         getNotes()
     }, [])
@@ -38,9 +39,9 @@ function HomePage() {
                         <div className="titleAlign">
                             <Title>Suas notas</Title>
                         </div>
-                        {notes ? notes.map((note) => {
+                        {notes?.length ? notes.map((note) => {
                             return <Card note={note} key={note.id} getNotes={getNotes} />
-                        }) : <p>Carregando</p>}
+                        }) : <NoteError />}
                     </div>
                 </div>
             </section>

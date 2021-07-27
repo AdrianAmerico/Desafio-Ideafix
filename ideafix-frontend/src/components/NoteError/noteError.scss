@@ -1,0 +1,17 @@
+@import "../../styles/colors.scss";
+
+#noteContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / span 3;
+  padding: 10px;
+  color: $red-error;
+  
+  @media (max-width: 600px) {
+    text-align: center;
+  }
+  h2 {
+    font-weight: 700;
+  }
+}
