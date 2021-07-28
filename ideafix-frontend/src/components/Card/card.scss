@@ -7,17 +7,24 @@
   padding: 10px;
   margin: 10px 0;
   max-width: 500px;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   position: relative;
-  border-radius: 8px;
 
+  &:hover {
+    transform: scale(1.1);
+    transition: 200ms linear;
+  }
+
+  .titleAlign {
+    padding: 10px;
+  }
   .cardAlign {
     background-color: $card-background;
     border-radius: 8px;
     height: 100%;
-    box-shadow: 0 2px 3px $intense-gray;
+    box-shadow: 0 1px 2px $intense-gray;
+    text-overflow: ellipsis;
+    overflow: overlay;
   }
 
   .icon {
@@ -32,30 +39,37 @@
     color: $blue-ocean;
   }
 
-  p {
+  span {
     color: $intense-gray;
     font-size: 0.8rem;
+    word-break: break-all;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    overflow: overlay;
   }
 
   h3,
-  p {
+  span {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
+
 @media (max-width: 600px) {
   #cardContainer {
     width: 100%;
     height: 150px;
+    .cardAlign {
+      box-shadow: 0 1px 2px 1px $intense-gray;
+    }
 
-    h3,
-    p {
-      word-wrap: break-all;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      line-clamp: 2;
-      text-overflow: inherit;
+    span {
+      overflow: auto;
+    }
+
+    h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

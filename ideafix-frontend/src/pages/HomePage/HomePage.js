@@ -4,14 +4,13 @@ import { Title } from './styled';
 import { useGetNotes, putCreateNote } from '../../requests';
 import './homePage.scss';
 import useForm from '../../hooks/useForm';
-import { TextField } from '@material-ui/core';
+import NoteError from '../../components/NoteError/NoteError';
 
 function HomePage() {
 
-    const { notes, getNotes } = useGetNotes({})
+    const { notes, getNotes } = useGetNotes()
     const { body, onChange, clear } = useForm({ topic: "", message: "" })
-    console.log(body)
-
+    
     useEffect(() => {
         getNotes()
     }, [])
@@ -26,22 +25,23 @@ function HomePage() {
             <section className="taskSection-leftSide">
                 <Title>Bloco de notas</Title>
                 <form onSubmit={sendPost} className="formSection">
-                    <input placeholder="Assunto" name={"topic"} onChange={onChange} autoComplete="off"/>
-                    <textarea placeholder="Texto" name={"message"} onChange={onChange} rows="5" autoComplete="off"/>
+                    <input placeholder="Assunto" value={body.topic} name={"topic"} onChange={onChange} autoComplete="off" required />
+                    <textarea placeholder="Texto" value={body.message} name={"message"} onChange={onChange} rows="5" autoComplete="off" required />
                     <div>
                         <button>CRIAR NOTA</button>
                     </div>
-
                 </form>
             </section>
-            <section className="taskSection-rightSide">
 
+            <section className="taskSection-rightSide">
                 <div className="taskContainer">
                     <div className="taskAlign">
-                        <Title>Suas notas</Title>
-                        {notes ? notes.map((note) => {
+                        <div className="titleAlign">
+                            <Title>Suas notas</Title>
+                        </div>
+                        {notes?.length ? notes.map((note) => {
                             return <Card note={note} key={note.id} getNotes={getNotes} />
-                        }) : <p>Carregando</p>}
+                        }) : <NoteError />}
                     </div>
                 </div>
             </section>

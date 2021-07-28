@@ -6,5 +6,8 @@ font-family: Roboto, sans-serif;
 width: 100%;
 text-align: start;
 padding: 10px 0;
-grid-column: 1 / -1;
+
+@media(max-width: 600px) {
+    text-align: center;
+}
 `

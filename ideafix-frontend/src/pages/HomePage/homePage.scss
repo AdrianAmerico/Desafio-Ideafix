@@ -6,6 +6,7 @@
   height: 100vh;
   padding: 50px 0 50px 50px;
 }
+
 .taskSection-leftSide {
   flex: 3;
   border-right: 1px solid $orange;
@@ -57,6 +58,7 @@
       border-radius: 10rem;
       z-index: -2;
     }
+
     &:before {
       content: "";
       position: absolute;
@@ -69,6 +71,7 @@
       border-radius: 10rem;
       z-index: -1;
     }
+
     &:hover {
       color: #fff;
       &:before {
@@ -77,13 +80,17 @@
     }
   }
 }
-
 .taskSection-rightSide {
   flex: 7;
   border-left: 1px solid $orange;
 }
+
 .taskContainer {
   height: 100%;
+}
+.titleAlign {
+grid-column: 1 / -1;
+margin-left: 10px;
 }
 
 .taskAlign {
@@ -96,6 +103,7 @@
   justify-content: center;
   grid-gap: 10px;
 }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #homePageContainer {
     flex-direction: column;
@@ -103,11 +111,17 @@
     margin: 0;
   }
 
+  .formSection {
+    align-items: center;
+    text-align: center;
+  }
+
   .taskContainer {
     margin: 0 auto;
     align-items: flex-start;
     justify-content: flex-start;
   }
+
   .taskAlign {
     display: flex;
     flex-direction: column;
@@ -122,5 +136,11 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+  }
+
+  .titleAlign {
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 }
